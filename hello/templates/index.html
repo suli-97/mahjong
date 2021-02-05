@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <style>
+        body{
+            margin:0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>麻将小辅助</h1>
+    <div class="row">
+        <span>筒</span>
+        <input type="text" id="tong">
+    </div>
+    <div class="row">
+        <span>条</span>
+        <input type="text" id="tiao">
+    </div>
+    <div class="row">
+        <span>万</span>
+        <input type="text" id="wan">
+    </div>
+    
+    <button onclick="f()">提交</button>
+    <div id="result"></div>
+    <script>
+        const tong = document.getElementById("tong");
+        const tiao = document.getElementById("tiao");
+        const wan = document.getElementById("wan");
+        const result = document.getElementById("result");
+        function f(){
+            var request = new XMLHttpRequest();
+            request.open("POST","",true);
+            request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            request.send("tong="+tong.value+"&tiao="+tiao.value+"&wan="+wan.value);
+            request.onload = function(){
+                result.innerHTML = request.responseText;
+            }
+        }   
+    </script>
+</body>
+</html>
