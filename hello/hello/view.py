@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 import pymysql
-db = pymysql.connect(host="localhost",user="lisu",password="Ls3314188",database="mahjong")
+db = pymysql.connect(host="localhost",user="root",password="198751",database="lisu")
 cursor = db.cursor()
 
 mapping = ["九万","八万","七万","六万","五万","四万","三万","二万","一万",
