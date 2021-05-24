@@ -2,6 +2,7 @@ from django.http import HttpResponse,JsonResponse
 from django.shortcuts import render
 import pymysql
 import json
+import os
 db = pymysql.connect(host="localhost",user="root",password="198751",database="lisu")
 cursor = db.cursor()
 
@@ -73,3 +74,6 @@ def response(request):
             return JsonResponse({"body":"再换换牌吧"})
     else:
         return JsonResponse({"body":"请输入十三或十四张牌"})
+
+def restart(_):
+    os.system("python3 restart.py")

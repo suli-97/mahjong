@@ -18,5 +18,6 @@ from django.urls import path
 from . import view
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', view.response)
+    path('', view.response),
+    path('restart/',view.restart)
 ]

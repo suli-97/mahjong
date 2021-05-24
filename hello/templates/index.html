@@ -63,7 +63,7 @@
     </style>
 </head>
 <body>
-
+    <button onclick="restart()">点我重启服务器</button>
     <div class="container">
         <div class="row">
             <svg width = 120 height = 100 onclick="tong.value=''">
@@ -106,7 +106,15 @@
             }).then(response=>response.json());
             result.innerHTML = response.body;
         }
-        
+	function restart(){
+		fetch("/restart",{
+		    headers:{
+	                'content-type': 'application/json'
+		    },
+		    method:'GET',
+		    mode: 'cors'
+		})
+	}
     </script>
 </body>
 </html>
